@@ -1,0 +1,10 @@
+/.vscode
+/abap-ref
+/abaplint.json
+/builders
+/grammars
+/main.js
+/node_modules
+/package-lock.json
+/package.json
+/templates
