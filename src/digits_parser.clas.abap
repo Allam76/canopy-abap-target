@@ -26,7 +26,7 @@ class digits_parser implementation.
 
   method parse.
     data(parser) = new digits_parser( input = input actions = actions ).
-    result = parser->parse( ).
+    result = parser=>parse( ).
   endmethod.
 
   method parse2.
