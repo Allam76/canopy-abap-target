@@ -1,7 +1,7 @@
 ** This file was generated from
 ** See https://canopy.jcoglan.com/ for documentation
 
-class zcl_expressions_grammar definition public
+class zcl_exps_grammar definition public
     create public.
     public section.
         types string_string_tab type table of stringtab with empty key.
@@ -44,7 +44,7 @@ class zcl_expressions_grammar definition public
 
             data cache type hash_label_type_tab.
 endclass.
-class zcl_expressions_grammar implementation.
+class zcl_exps_grammar implementation.
     method class_constructor.
         REGEX_1 = new cl_abap_regex( pattern = '[0-9]' ).
         REGEX_2 = new cl_abap_regex( pattern = '[ \t\n\r]' ).
@@ -100,7 +100,7 @@ class zcl_expressions_grammar implementation.
                                 failure = offset.
                             endif.
                             if offset = failure.
-                                append value #( ( `expressions::expression` ) ( `\"+\"` ) ) to expected.
+                                append value #( ( `exps::expression` ) ( `\"+\"` ) ) to expected.
                             endif.
                         endif.
                         if address5 = failure_node.
@@ -122,7 +122,7 @@ class zcl_expressions_grammar implementation.
                                     failure = offset.
                                 endif.
                                 if offset = failure.
-                                    append value #( ( `expressions::expression` ) ( `\"-\"` ) ) to expected.
+                                    append value #( ( `exps::expression` ) ( `\"-\"` ) ) to expected.
                                 endif.
                             endif.
                             if address5 = failure_node.
@@ -158,7 +158,7 @@ class zcl_expressions_grammar implementation.
                     if elements2 is initial.
                         address3 = failure_node.
                     else.
-                        address3 = new zcl_expressions_parser_tree_node2(
+                        address3 = new zcl_exps_parser_tree_node2(
                             text = substring( val = input off = index3 len = offset - index3 )
                             offset = index3
                             elements = elements2 ).
@@ -192,7 +192,7 @@ class zcl_expressions_grammar implementation.
             if elements0 is initial.
                 address0 = failure_node.
             else.
-                address0 = new zcl_expressions_parser_tree_node1(
+                address0 = new zcl_exps_parser_tree_node1(
                     text = substring( val = input off = index1 len = offset - index1 )
                     offset = index1
                     elements = elements0 ).
@@ -253,7 +253,7 @@ class zcl_expressions_grammar implementation.
                                 failure = offset.
                             endif.
                             if offset = failure.
-                                append value #( ( `expressions::term` ) ( `\"*\"` ) ) to expected.
+                                append value #( ( `exps::term` ) ( `\"*\"` ) ) to expected.
                             endif.
                         endif.
                         if address5 = failure_node.
@@ -275,7 +275,7 @@ class zcl_expressions_grammar implementation.
                                     failure = offset.
                                 endif.
                                 if offset = failure.
-                                    append value #( ( `expressions::term` ) ( `\"/\"` ) ) to expected.
+                                    append value #( ( `exps::term` ) ( `\"/\"` ) ) to expected.
                                 endif.
                             endif.
                             if address5 = failure_node.
@@ -311,7 +311,7 @@ class zcl_expressions_grammar implementation.
                     if elements2 is initial.
                         address3 = failure_node.
                     else.
-                        address3 = new zcl_expressions_parser_tree_node4(
+                        address3 = new zcl_exps_parser_tree_node4(
                             text = substring( val = input off = index3 len = offset - index3 )
                             offset = index3
                             elements = elements2 ).
@@ -345,7 +345,7 @@ class zcl_expressions_grammar implementation.
             if elements0 is initial.
                 address0 = failure_node.
             else.
-                address0 = new zcl_expressions_parser_tree_node3(
+                address0 = new zcl_exps_parser_tree_node3(
                     text = substring( val = input off = index1 len = offset - index1 )
                     offset = index1
                     elements = elements0 ).
@@ -391,7 +391,7 @@ class zcl_expressions_grammar implementation.
                     failure = offset.
                 endif.
                 if offset = failure.
-                    append value #( ( `expressions::factor` ) ( `\"(\"` ) ) to expected.
+                    append value #( ( `exps::factor` ) ( `\"(\"` ) ) to expected.
                 endif.
             endif.
             if address1 <> failure_node.
@@ -426,7 +426,7 @@ class zcl_expressions_grammar implementation.
                                     failure = offset.
                                 endif.
                                 if offset = failure.
-                                    append value #( ( `expressions::factor` ) ( `\")\"` ) ) to expected.
+                                    append value #( ( `exps::factor` ) ( `\")\"` ) ) to expected.
                                 endif.
                             endif.
                             if address5 <> failure_node.
@@ -454,7 +454,7 @@ class zcl_expressions_grammar implementation.
             if elements0 is initial.
                 address0 = failure_node.
             else.
-                address0 = new zcl_expressions_parser_tree_node5(
+                address0 = new zcl_exps_parser_tree_node5(
                     text = substring( val = input off = index2 len = offset - index2 )
                     offset = index2
                     elements = elements0 ).
@@ -514,7 +514,7 @@ class zcl_expressions_grammar implementation.
                             failure = offset.
                         endif.
                         if offset = failure.
-                            append value #( ( `expressions::integer` ) ( `[0-9]` ) ) to expected.
+                            append value #( ( `exps::integer` ) ( `[0-9]` ) ) to expected.
                         endif.
                     endif.
                     if address3 <> failure_node.
@@ -545,7 +545,7 @@ class zcl_expressions_grammar implementation.
             if elements0 is initial.
                 address0 = failure_node.
             else.
-                address0 = new zcl_expressions_parser_tree_node6(
+                address0 = new zcl_exps_parser_tree_node6(
                     text = substring( val = input off = index1 len = offset - index1 )
                     offset = index1
                     elements = elements0 ).
@@ -591,7 +591,7 @@ class zcl_expressions_grammar implementation.
                         failure = offset.
                     endif.
                     if offset = failure.
-                        append value #( ( `expressions::_` ) ( `[ \\t\\n\\r]` ) ) to expected.
+                        append value #( ( `exps::_` ) ( `[ \\t\\n\\r]` ) ) to expected.
                     endif.
                 endif.
                 if address1 <> failure_node.

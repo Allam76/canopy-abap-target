@@ -13,7 +13,7 @@ endclass.
 class test_simple implementation.
 
   method simple_test.
-    data(node) = ZCL_EXPRESSIONS_PARSER=>PARSE( <text> ).
+    data(node) = ZCL_EXPS_PARSER=>PARSE( <text> ).
     cl_aunit_assert=>assert_bound( act = node msg = 'node should be bound' ).
   endmethod.
 

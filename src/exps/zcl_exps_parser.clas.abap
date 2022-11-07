@@ -1,8 +1,8 @@
 ** This file was generated from
 ** See https://canopy.jcoglan.com/ for documentation
 
-class zcl_expressions_parser definition public
-    inheriting from zcl_expressions_grammar
+class zcl_exps_parser definition public
+    inheriting from zcl_exps_grammar
     create public.
 
   public section.
@@ -22,7 +22,7 @@ class zcl_expressions_parser definition public
                          returning value(result) type string.
 endclass.
 
-class zcl_expressions_parser implementation.
+class zcl_exps_parser implementation.
   method constructor.
     super->constructor( ).
     me->input = input.
@@ -33,7 +33,7 @@ class zcl_expressions_parser implementation.
   endmethod.
 
   method parse.
-    data(parser) = new zcl_expressions_parser( input = input actions = actions ).
+    data(parser) = new zcl_exps_parser( input = input actions = actions ).
     result = parser->parse3( ).
   endmethod.
 
@@ -80,7 +80,7 @@ class zcl_expressions_parser implementation.
     endif.
     if expected is initial.
       failure = offset.
-      append value stringtab( ( `expressions` ) ( `<EOF>` ) ) to expected.
+      append value stringtab( ( `exps` ) ( `<EOF>` ) ) to expected.
     endif.
     raise exception type zcx_canopy_parser_error
         exporting message = format_error( input = input offset = failure expected = expected ).
