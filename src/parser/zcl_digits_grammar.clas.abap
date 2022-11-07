@@ -108,9 +108,11 @@ class zcl_digits_grammar implementation.
         if address2 <> failure_node.
           append address2 to elements0.
         else.
+          clear elements0.
           offset = index1.
         endif.
       else.
+        clear elements0.
         offset = index1.
       endif.
       if elements0 is initial.
