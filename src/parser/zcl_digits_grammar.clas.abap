@@ -118,7 +118,7 @@ class zcl_digits_grammar implementation.
       if elements0 is initial.
         address0 = failure_node.
       else.
-        address0 = new parser_tree_node1(
+        address0 = new zcl_digits_parser_tree_node1(
                     text = substring( val = input off = index1 len = index1 + 1 )
                     offset = index1
                     elements = value zcl_canopy_parser_tree_node=>tree_node_list_tab( ) ).
