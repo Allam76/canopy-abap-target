@@ -71,7 +71,7 @@ class zcl_digits_grammar implementation.
         address1 = new zcl_canopy_parser_tree_node(
                     text = substring( val = input off = offset len = offset + 3 - offset )
                     offset = offset
-                    elements = null ).
+                    elements = value #( ) ).
         offset = offset + 3.
       else.
         address1 = failure_node.
@@ -94,7 +94,7 @@ class zcl_digits_grammar implementation.
           address2 = new zcl_canopy_parser_tree_node(
                         text = substring( val = input off = offset len = offset + 3 - offset )
                         offset = offset
-                        elements = null ).
+                        elements = value #( ) ).
           offset = offset + 3.
         else.
           address2 = failure_node.
@@ -158,7 +158,7 @@ class zcl_digits_grammar implementation.
           address1 = new zcl_canopy_parser_tree_node(
                         text = substring( val = input off = offset len = offset + 1 - offset )
                         offset = offset
-                        elements = null ).
+                        elements = value #( ) ).
           offset = offset + 1.
         else.
           address1 = failure_node.
