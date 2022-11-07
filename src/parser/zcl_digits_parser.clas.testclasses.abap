@@ -1,7 +1,7 @@
 ** This file was generated from
 ** See https://canopy.jcoglan.com/ for documentation
 
-class test_simple definition final for testing
+class test_simple definition final for testing 
   duration short
   risk level harmless.
 
@@ -13,7 +13,7 @@ endclass.
 class test_simple implementation.
 
   method simple_test.
-    data(node) = zcl_digits_parser=>parse( <text> ).
+    data(node) = ZCL_DIGITS_PARSER=>PARSE( <text> ).
     cl_aunit_assert=>assert_bound( act = node msg = 'node should be bound' ).
   endmethod.
 
