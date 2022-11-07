@@ -38,16 +38,16 @@ class zcl_digits_parser implementation.
   endmethod.
 
   method format_error.
-    split input at '\n' into table data(lines).
+    split input at '\n' into table data(line_data).
     data(line_no) = 0.
     data(position) = 0.
 
     while position <= offset.
-      position = position + lines( lines[ line_no ] ) + 1.
+      position = position + lines( line_data[ line_no ] ) + 1.
       line_no = line_no + 1.
     endwhile.
 
-    data(line) = lines[ line_no - 1 ].
+    data(line) = line_data[ line_no - 1 ].
     data(message) = 'Line ' && line_no + ': expected one of:\n\n'.
 
     data message type string.
@@ -71,7 +71,7 @@ class zcl_digits_parser implementation.
 
   method parse3.
     data(tree) = _read_( ).
-    if tree ne failure and offset = input_size.
+    if tree ne FAILURE and offset = input_size.
       result = tree.
       return.
     endif.
