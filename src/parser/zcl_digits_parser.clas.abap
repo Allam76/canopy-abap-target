@@ -78,12 +78,12 @@ class zcl_digits_parser implementation.
       result = tree.
       return.
     endif.
-    if expected->is_empty( ).
+    if expected is initial.
       failure = offset.
-      expected->add( value stringtab( ( `digits` ) ( `<EOF>` ) ) ).
+      append value stringtab( ( `digits` ) ( `<EOF>` ) ) to expected.
     endif.
     raise exception type zcx_canopy_parser_error
-        exporting parent = new zcx_canopy_parser_error( input = input  reason = failure expected = expected ).
+        exporting text = format_error( input = input  reason = failure expected = expected ).
   endmethod.
 
 endclass.
