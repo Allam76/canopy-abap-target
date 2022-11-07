@@ -6,7 +6,7 @@ class zcl_digits_grammar definition public
     public section.
         types string_string_tab type table of stringtab with empty key.
 
-        class-data failure_node type ref to zcl_parser_tree_node.
+        class-data failure_node type ref to zcl_canopy_parser_tree_node.
         data input_size type i.
         data offset type i.
         data failure type i.

@@ -3,8 +3,8 @@
 
 class cache_record definition.
     public section.
-        data node type ref to zcl_digits_parser_tree_node.
+        data node type ref to zcl_canopy_parser_tree_node.
         data tail type i.
 
-        methods constructor importing node type ref to zcl_digits_parser_tree_node tail type i.
+        methods constructor importing node type ref to zcl_canopy_parser_tree_node tail type i.
 endclass.
