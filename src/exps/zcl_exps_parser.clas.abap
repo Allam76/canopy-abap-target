@@ -18,7 +18,7 @@ class zcl_exps_parser definition public
                    raising zcx_canopy_parser_error.
     methods format_error importing input type string
                                    offset type i
-                                   expected type zcl_digits_grammar=>string_string_tab
+                                   expected type zcl_exps_grammar=>string_string_tab
                          returning value(result) type string.
 endclass.
 
