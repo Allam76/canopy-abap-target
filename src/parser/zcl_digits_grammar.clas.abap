@@ -13,7 +13,7 @@ class zcl_digits_grammar definition public
 
         data input type string.
         data expected type string_string_tab.
-        data actions type ref to zif_test_parser_action.
+        data actions type ref to zif_canopy_action.
 
         class-methods class_constructor.
         class-data REGEX_1 type ref to cl_abap_regex.
