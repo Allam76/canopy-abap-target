@@ -5,7 +5,7 @@
    <VSEOCLASS>
     <CLSNAME>ZCL_DIGITS_PARSER_TREE_NODE1</CLSNAME>
     <LANGU>E</LANGU>
-    <DESCRIPT>Parser for grammar digits_parser_tree_node1</DESCRIPT>
+    <DESCRIPT>Parser for grammar </DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>
