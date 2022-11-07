@@ -51,7 +51,7 @@ class zcl_digits_grammar implementation.
     data(address0) = failure_node.
     data(index0) = offset.
     append value #( key = 'DIGITS' value = value #( ) ) to cache.
-    data(rule) = cache[ key = 'root' ].
+    data(rule) = cache[ key = 'root' ]-value.
     if rule is initial.
       append value #( key = 'root' value = rule ) to cache.
     endif.
@@ -131,7 +131,7 @@ class zcl_digits_grammar implementation.
     data(address0) = failure_node.
     data(index0) = offset.
     append value #( key = 'DIGITS' value = value #( ) ) to cache.
-    data(rule) = cache[ key = 'digits' ].
+    data(rule) = cache[ key = 'digits' ]-value.
     if rule is initial.
       append value #( key = 'digits' value = rule ) to cache.
     endif.
