@@ -69,13 +69,13 @@ class zcl_digits_grammar implementation.
       endif.
       if chunk0 is not initial and chunk0 = `foo`.
         address1 = new zcl_canopy_parser_tree_node(
-                    text = substring( val = offset off = offset + 3 ) offset = offset ).
+                    text = substring( val = input off = offset len = offset + 1 ) offset = offset ).
         offset = offset + 3.
       else.
         address1 = failure_node.
         if offset > failure.
           failure = offset.
-          data expected type tree_node_list_tab.
+          data expected type zcl_canopy_parser_tree_node=>tree_node_list_tab.
         endif.
         if offset = failure.
           append value #( ( `digits::root` ) ( `\"foo\"` ) ) to expected.
@@ -91,13 +91,13 @@ class zcl_digits_grammar implementation.
         endif.
         if chunk1 is not initial and chunk1 = `bar`.
           address2 = new zcl_canopy_parser_tree_node(
-                        text = substring( val = offset off = offset + 3 ) offset = offset ).
+                        text = substring( val = input off = offset len = offset + 1 ) offset = offset ).
           offset = offset + 3.
         else.
           address2 = failure_node.
           if offset > failure.
             failure = offset.
-            data expected type tree_node_list_tab.
+            data expected type zcl_canopy_parser_tree_node=>tree_node_list_tab.
           endif.
           if offset = failure.
             append value #( ( `digits::root` ) ( `\"bar\"` ) ) to expected.
@@ -117,7 +117,7 @@ class zcl_digits_grammar implementation.
         address0 = failure_node.
       else.
         address0 = new parser_tree_node1(
-                    text = substring( val = index1 off = offset ) offset = index1 ).
+                    text = substring( val = input off = index1 len = index1 + 1 ) offset = index1 ).
         offset = offset.
       endif.
       if address0 <> failure_node.
@@ -150,13 +150,13 @@ class zcl_digits_grammar implementation.
         endif.
         if chunk0 is not initial and regex_1->create_matcher( text = chunk0 )->match( ) = abap_true.
           address1 = new zcl_canopy_parser_tree_node(
-                        text = substring( val = offset off = offset + 1 ) offset = offset ).
+                        text = substring( val = input off = offset len = offset + 1 ) offset = offset ).
           offset = offset + 1.
         else.
           address1 = failure_node.
           if offset > failure.
             failure = offset.
-            data expected type tree_node_list_tab.
+            data expected type zcl_canopy_parser_tree_node=>tree_node_list_tab.
           endif.
           if offset = failure.
             append value #( ( `digits::digits` ) ( `[0-9]` ) ) to expected.
@@ -170,7 +170,7 @@ class zcl_digits_grammar implementation.
       enddo.
       if lines( elements0 ) >= 0.
         address0 = new zcl_canopy_parser_tree_node(
-                    text = substring( val = index1 off = offset ) offset = index1 ).
+                    text = substring( val = input off = index1 len = index1 + 1 ) offset = index1 ).
         offset = offset.
       else.
         address0 = failure_node.
