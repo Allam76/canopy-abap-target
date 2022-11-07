@@ -83,7 +83,7 @@ class zcl_digits_parser implementation.
       append value stringtab( ( `digits` ) ( `<EOF>` ) ) to expected.
     endif.
     raise exception type zcx_canopy_parser_error
-        exporting text = format_error( input = input  reason = failure expected = expected ).
+        exporting message = format_error( input = input offset = failure expected = expected ).
   endmethod.
 
 endclass.
