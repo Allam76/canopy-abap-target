@@ -38,29 +38,28 @@ class zcl_digits_parser implementation.
   endmethod.
 
   method format_error.
-    split input at '\n' into table data(line_data).
+    split input at '\n' into table data(lines) in character mode.
     data(line_no) = 0.
     data(position) = 0.
 
     while position <= offset.
-      position = position + lines( line_data[ line_no ] ) + 1.
+      position = position + strlen( lines[ line_no ] ) + 1.
       line_no = line_no + 1.
     endwhile.
 
-    data(line) = line_data[ line_no - 1 ].
-    data(message) = 'Line ' && line_no + ': expected one of:\n\n'.
+    data(line) = lines[ line_no - 1 ].
+    data(message) = 'Line ' && line_no && ': expected one of:\n\n'.
 
-    data message type string.
     loop at expected into data(pair).
       message = message && |    - { pair[ 1 ] } from { pair[ 0 ] }\n|.
     endloop.
     data(number) = '' && line_no.
-    while lines( number ) < 6.
+    while strlen( number ) < 6.
       number = ' ' && number.
       message = message && '\n' && number && ' | ' && line && '\n'.
     endwhile.
 
-    position = position - lines( line ) + 10.
+    position = position - strlen( line ) + 10.
 
     while position < offset.
       message = message && ' '.
