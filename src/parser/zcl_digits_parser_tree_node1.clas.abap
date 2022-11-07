@@ -12,7 +12,7 @@ endclass.
 class zcl_digits_parser_tree_node1 implementation.
 method constructor.
     super->constructor( text = text  offset = offset  elements = elements ).
-    append value #( key = 'first' value = elements[ 0 ] ) to labelled.
-    append value #( key = 'second' value = elements[ 1 ] ) to labelled.
+    append value #( key = 'first' value = elements[ 1 ] ) to labelled.
+    append value #( key = 'second' value = elements[ 2 ] ) to labelled.
 endmethod.
 endclass.

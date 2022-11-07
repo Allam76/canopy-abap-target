@@ -43,7 +43,7 @@ class zcl_digits_parser implementation.
 
   method format_error.
     split input at '\n' into table data(lines) in character mode.
-    data(line_no) = 0.
+    data(line_no) = 1.
     data(position) = 0.
 
     while position <= offset.
@@ -55,11 +55,11 @@ class zcl_digits_parser implementation.
     data(message) = 'Line ' && line_no && ': expected one of:\n\n'.
 
     loop at expected into data(pair).
-      message = message && |    - { pair[ 1 ] } from { pair[ 0 ] }\n|.
+      message = message && |    - { pair[ 2 ] } from { pair[ 1 ] }\n|.
     endloop.
     data(number) = '' && line_no.
     while strlen( number ) < 6.
-      number = ' ' && number.
+      number = ` ` && number.
       message = message && '\n' && number && ' | ' && line && '\n'.
     endwhile.
 
