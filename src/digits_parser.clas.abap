@@ -6,11 +6,11 @@ class digits_parser definition public
     create public.
 
   public section.
-    methods constructor importing input type string actions type ref to lcl_actions.
-    class-methods parse importing input type string actions type ref to lcl_actions 
-                    returning value(result) type ref to lcl_tree_node
-                    raising zcx_parse_error.
-    methods parse2 importing input type string raising zcx_parse_error.
+    methods constructor importing input type string actions type ref to .
+    class-methods parse importing input type string actions type ref to 
+                    returning value(result) type ref to 
+                    raising .
+    methods parse2 importing input type string raising .
     methods parse3.
     methods format_error importing input type string offset type int expected type expected_tab.
 endclass.
