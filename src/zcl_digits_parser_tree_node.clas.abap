@@ -21,13 +21,13 @@ class zcl_digits_parser_tree_node definition public
 endclass.
 
 class zcl_digits_parser_tree_node implementation.
-  method constructor.
-    me->text = text.
-    me->offset = offset.
-    me->elements = elements.
-  endmethod.
+    method constructor.
+        me->text = text.
+        me->offset = offset.
+        me->elements = elements.
+    endmethod.
 
-  method get.
-    result = me->labelled[ key = key ]-value.
-  endmethod.
+    method get.
+        result = me->labelled[ key = key ]-value.
+    endmethod.
 endclass.

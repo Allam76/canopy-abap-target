@@ -17,6 +17,7 @@ endclass.
 
 class zcl_digits_parser implementation.
   method constructor.
+    super->constructor( ).
     me->input = input.
     input_size = strlen( input ).
     me->actions = actions.
@@ -67,7 +68,7 @@ class zcl_digits_parser implementation.
 
   method parse3.
     data(tree) = _read_( ).
-    if tree ne failure and offset = input_size.
+    if tree ne FAILURE and offset = input_size.
       result = tree.
       return.
     endif.

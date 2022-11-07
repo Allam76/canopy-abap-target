@@ -50,10 +50,10 @@ class zcl_digits_grammar implementation.
   method _read_root.
     data(address0) = failure_node.
     data(index0) = offset.
-    append value #( ( key = 'DIGITS' value = value #( ) ) ) to cache.
+    append value #( key = 'DIGITS' value = value #( ) ) to cache.
     data(rule) = cache[ key = 'root' ].
     if rule is initial.
-      append value #( ( key = 'root' value = rule ) ) to cache.
+      append value #( key = 'root' value = rule ) to cache.
     endif.
     if exists( rule[ key = offset ] ).
       address0 = rule[ value = offset ]-node.
@@ -82,7 +82,7 @@ class zcl_digits_grammar implementation.
         endif.
       endif.
       if address1 <> failure_node.
-        append value #( ( key = 0 value = address1 ) ) to elements0.
+        append value #( key = 0 value = address1 ) to elements0.
         data(address2) = failure_node.
         data(chunk1) = null.
         data(max1) = offset + 3.
@@ -104,7 +104,7 @@ class zcl_digits_grammar implementation.
           endif.
         endif.
         if address2 <> failure_node.
-          append value #( ( key = 1 value = address2 ) ) to elements0.
+          append value #( key = 1 value = address2 ) to elements0.
         else.
           elements0 = null.
           offset = index1.
@@ -122,7 +122,7 @@ class zcl_digits_grammar implementation.
       endif.
       if address0 <> failure_node.
       endif.
-      append value #( ( key = index0 value = new cache_record( key = 'address0' value = offset ) ) ) to rule.
+      append value #( key = index0 value = new cache_record( key = 'address0' value = offset ) ) to rule.
     endif.
     result = address0.
   endmethod.
@@ -130,10 +130,10 @@ class zcl_digits_grammar implementation.
   method _read_digits.
     data(address0) = failure_node.
     data(index0) = offset.
-    append value #( ( key = 'DIGITS' value = value #( ) ) ) to cache.
+    append value #( key = 'DIGITS' value = value #( ) ) to cache.
     data(rule) = cache[ key = 'digits' ].
     if rule is initial.
-      append value #( ( key = 'digits' value = rule ) ) to cache.
+      append value #( key = 'digits' value = rule ) to cache.
     endif.
     if exists( rule[ key = offset ] ).
       address0 = rule[ value = offset ]-node.
@@ -163,7 +163,7 @@ class zcl_digits_grammar implementation.
           endif.
         endif.
         if address1 <> failure_node.
-          append value #( ( address1 ) ) to elements0.
+          append value #( address1 ) to elements0.
         else.
           return.
         endif.
@@ -175,7 +175,7 @@ class zcl_digits_grammar implementation.
       else.
         address0 = failure_node.
       endif.
-      append value #( ( key = index0 value = new cache_record( key = 'address0' value = offset ) ) ) to rule.
+      append value #( key = index0 value = new cache_record( key = 'address0' value = offset ) ) to rule.
     endif.
     result = address0.
   endmethod.
