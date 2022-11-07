@@ -6,7 +6,7 @@ class test_simple definition final for testing
   risk level harmless.
 
   private section.
-    methods first_test for testing raising cx_static_check.
+    methods simple_test for testing raising cx_static_check.
 endclass.
 
 

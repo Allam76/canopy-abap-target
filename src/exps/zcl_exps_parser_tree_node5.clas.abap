@@ -14,6 +14,6 @@ method constructor.
     super->constructor( text = text  offset = offset  elements = elements ).
     append value #( key = '_' value = elements[ 4 ] ) to labelled.
     append value #( key = 'expr' value = elements[ 3 ] ) to labelled.
-    append value #( key = 'Expression' value = elements[ 3 ] ) to labelled.
+    append value #( key = 'expression' value = elements[ 3 ] ) to labelled.
 endmethod.
 endclass.

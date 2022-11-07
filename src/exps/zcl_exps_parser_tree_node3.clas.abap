@@ -13,7 +13,7 @@ class zcl_exps_parser_tree_node3 implementation.
 method constructor.
     super->constructor( text = text  offset = offset  elements = elements ).
     append value #( key = 'head' value = elements[ 1 ] ) to labelled.
-    append value #( key = 'Factor' value = elements[ 1 ] ) to labelled.
+    append value #( key = 'factor' value = elements[ 1 ] ) to labelled.
     append value #( key = 'tail' value = elements[ 2 ] ) to labelled.
 endmethod.
 endclass.
