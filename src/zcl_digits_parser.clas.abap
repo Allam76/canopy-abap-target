@@ -12,7 +12,7 @@ class zcl_digits_parser definition public
                     raising zcx_digits_parser_error.
     methods parse2 importing input type string raising zcx_digits_parser_error.
     methods parse3.
-    methods format_error importing input type string offset type int expected type expected_tab.
+    methods format_error importing input type string offset type i expected type zcl_digits_grammar=>string_string_tab.
 endclass.
 
 class zcl_digits_parser implementation.
