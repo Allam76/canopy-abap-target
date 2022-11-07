@@ -5,7 +5,8 @@
    <VSEOINTERF>
     <CLSNAME>ZIF_CANOPY_ACTION</CLSNAME>
     <LANGU>E</LANGU>
-    <DESCRIPT>Interface for grammar digits</DESCRIPT>
+    <DESCRIPT>Canopy parser action base interface</DESCRIPT>
+    <EXPOSURE>2</EXPOSURE>
     <STATE>1</STATE>
     <UNICODE>X</UNICODE>
    </VSEOINTERF>
