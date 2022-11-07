@@ -6,8 +6,8 @@ class zcl_digits_parser definition public
     create public.
 
   public section.
-    methods constructor importing input type string actions type ref to zif_digits_action.
-    class-methods parse importing input type string actions type ref to zif_digits_action
+    methods constructor importing input type string actions type ref to zif_canopy_action.
+    class-methods parse importing input type string actions type ref to zif_canopy_action
                     returning value(result) type ref to zcl_canopy_parser_tree_node
                     raising zcx_canopy_parser_error.
     methods parse2 importing input type string
@@ -71,7 +71,7 @@ class zcl_digits_parser implementation.
 
   method parse3.
     data(tree) = _read_( ).
-    if tree ne FAILURE and offset = input_size.
+    if tree ne failure and offset = input_size.
       result = tree.
       return.
     endif.
