@@ -60,11 +60,11 @@ class zcl_digits_grammar implementation.
             offset = rule[ key = offset ]-value->tail.
         else.
             data(index1) = offset.
-            data elements0 type tree_node_list_tab.
+            data elements0 type zcl_canopy_parser_tree_node=>tree_node_list_tab.
             data(address1) = failure_node.
             data chunk0 type string.
             data(max0) = offset + 3.
-            if max0 <= inputSize.
+            if max0 <= input_size.
                 chunk0 = substring( val = input off = offset len = max0 - offset ).
             endif.
             if chunk0 is not initial and chunk0 = `foo`.
@@ -86,7 +86,7 @@ class zcl_digits_grammar implementation.
                 data(address2) = failure_node.
                 data chunk1 type string.
                 data(max1) = offset + 3.
-                if max1 <= inputSize.
+                if max1 <= input_size.
                     chunk1 = substring( val = input off = offset len = max1 - offset ).
                 endif.
                 if chunk1 is not initial and chunk1 = `bar`.
@@ -140,12 +140,12 @@ class zcl_digits_grammar implementation.
             offset = rule[ key = offset ]-value->tail.
         else.
             data(index1) = offset.
-            data elements0 type tree_node_list_tab.
+            data elements0 type zcl_canopy_parser_tree_node=>tree_node_list_tab.
             data address1 type zcl_canopy_parser_tree_node.
             do.
                 data chunk0 type string.
                 data(max0) = offset + 1.
-                if max0 <= inputSize.
+                if max0 <= input_size.
                     chunk0 = substring( val = input off = offset len = max0 - offset ).
                 endif.
                 if chunk0 is not initial and REGEX_1->create_matcher( text = chunk0 )->match( ) = abap_true.
