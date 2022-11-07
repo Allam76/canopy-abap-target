@@ -7,7 +7,8 @@ class zcl_digits_parser definition public
 
   public section.
     methods constructor importing input type string actions type ref to zif_canopy_action.
-    class-methods parse importing input type string actions type ref to zif_canopy_action
+    class-methods parse importing input type string
+                                  actions type ref to zif_canopy_action optional
                     returning value(result) type ref to zcl_canopy_parser_tree_node
                     raising zcx_canopy_parser_error.
     methods parse2 importing input type string
@@ -15,7 +16,10 @@ class zcl_digits_parser definition public
                    raising zcx_canopy_parser_error.
     methods parse3 returning value(result) type ref to zcl_canopy_parser_tree_node
                    raising zcx_canopy_parser_error.
-    methods format_error importing input type string offset type i expected type zcl_digits_grammar=>string_string_tab.
+    methods format_error importing input type string
+                                   offset type i
+                                   expected type zcl_digits_grammar=>string_string_tab
+                         returning value(result) type string.
 endclass.
 
 class zcl_digits_parser implementation.
@@ -69,14 +73,14 @@ class zcl_digits_parser implementation.
   endmethod.
 
   method parse3.
-    data(tree) = _read_( ).
-    if tree ne FAILURE and offset = input_size.
+    data(tree) = _read_root( ).
+    if tree <> failure_node and offset = input_size.
       result = tree.
       return.
     endif.
     if expected->is_empty( ).
       failure = offset.
-      expected->add( value stringtab( (  ) ( `<EOF>` ) ) ).
+      expected->add( value stringtab( ( `digits` ) ( `<EOF>` ) ) ).
     endif.
     raise exception type zcx_canopy_parser_error
         exporting parent = new zcx_canopy_parser_error( input = input  reason = failure expected = expected ).
